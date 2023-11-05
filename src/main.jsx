@@ -8,6 +8,7 @@ import Login from "./Authentication/Login";
 import Main from "./Components/Home/Main";
 import AuthProviders from "./Provider/AuthProviders";
 import SignUp from "./Authentication/SignUp";
+import AddBooks from "./PrivateRoute/AddBooks";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("data.json"),
       },
       {
         path: "/login",
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/addBook",
+        element: <AddBooks></AddBooks>,
       },
     ],
   },
