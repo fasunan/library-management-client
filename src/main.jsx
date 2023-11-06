@@ -10,6 +10,8 @@ import AuthProviders from "./Provider/AuthProviders";
 import SignUp from "./Authentication/SignUp";
 import AddBooks from "./PrivateRoute/AddBooks";
 import AllBooks from "./PrivateRoute/AllBooks";
+import Details from "./PrivateRoute/Details";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,13 +33,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/addBook",
-        element: <AddBooks></AddBooks>,
+        element: (
+          <PrivateRoute>
+            <AddBooks></AddBooks>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/:category",
         element: <AllBooks></AllBooks>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/books/${params.category}`),
+      },
+      {
+        path: "/seeDetails/:id",
+        element: <Details></Details>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/books/${params._id}`),
       },
     ],
   },
