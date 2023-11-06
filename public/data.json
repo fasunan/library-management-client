@@ -1,32 +1,26 @@
 [
   {
-    "id": 1,
     "category": "Arts & Music",
     "image": "https://i.ibb.co/YNFSHxt/card-1.jpg"
   },
 
   {
-    "id": 2,
     "category": "Science Fiction",
     "image": "https://i.ibb.co/rf4Fk8P/card-2.jpg"
   },
   {
-    "id": 3,
     "category": "History",
     "image": "https://i.ibb.co/CsjrV5y/card-3.jpg"
   },
   {
-    "id": 4,
     "category": "Biographic",
     "image": "https://i.ibb.co/94S34K8/card-4.jpg"
   },
   {
-    "id": 5,
     "category": "Comics",
     "image": "https://i.ibb.co/h98msp0/card-5.jpg"
   },
   {
-    "id": 6,
     "category": "Cooking ",
     "image": "https://i.ibb.co/jfTMhSQ/card-6.jpg"
   }

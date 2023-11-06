@@ -9,6 +9,7 @@ import Main from "./Components/Home/Main";
 import AuthProviders from "./Provider/AuthProviders";
 import SignUp from "./Authentication/SignUp";
 import AddBooks from "./PrivateRoute/AddBooks";
+import AllBooks from "./PrivateRoute/AllBooks";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("data.json"),
+        loader: () => fetch("http://localhost:5000/categories"),
       },
       {
         path: "/login",
@@ -31,6 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/addBook",
         element: <AddBooks></AddBooks>,
+      },
+      {
+        path: "/:category",
+        element: <AllBooks></AllBooks>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/books/${params.category}`),
       },
     ],
   },
