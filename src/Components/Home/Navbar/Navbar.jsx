@@ -35,7 +35,17 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar bg-slate-400 text-neutral-content">
+      <div className="navbar bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 text-neutral-content">
+        <div className="flex ml-4">
+          <img
+            className="w-14 rounded-md"
+            src="https://i.ibb.co/fDZSx7R/4851043.jpg"
+            alt=""
+          />
+          <span>
+            <h2 className="text-base font-bold ml-2">Al-Moun Library</h2>
+          </span>
+        </div>
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-success lg:hidden">
@@ -64,11 +74,13 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1 text-lg font-semibold  text-rose-700">
+            {links}
+          </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end mr-5">
           <p>{user?.displayName}</p>
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-2">
             <div className="w-10 rounded-full">
               <img src={user?.photoURL} />
             </div>
@@ -77,13 +89,13 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={handleLogOut}
-              className="h-8 w-16 rounded bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+              className="h-9 w-16 rounded bg-gradient-to-r from-rose-500 to-green-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800"
             >
               Sign Out
             </button>
           ) : (
             <Link to={"/login"}>
-              <button className=" h-8 w-16 rounded bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ... ">
+              <button className=" h-9 w-16 rounded bg-gradient-to-r from-rose-500 to-green-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800">
                 LogIn
               </button>
             </Link>

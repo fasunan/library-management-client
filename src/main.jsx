@@ -48,8 +48,8 @@ const router = createBrowserRouter([
       {
         path: "/seeDetails/:id",
         element: <Details></Details>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/books/${params._id}`),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/booksId/${params.id}`),
       },
     ],
   },
