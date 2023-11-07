@@ -21,7 +21,7 @@ const Navbar = () => {
       </li>
       <li>
         {" "}
-        <NavLink to={"/AllBooks"}>All Books</NavLink>
+        <NavLink to={"/showAllBooks"}>All Books</NavLink>
       </li>
       <li>
         {" "}
