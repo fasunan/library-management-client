@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import { useEffect, useState } from "react";
 import { CiDark } from 'react-icons/ci';
+import WritersQuote from "../../writersQuote/WritersQuote";
 
 const Home = () => {
   const [theme, setTheme] = useState("light");
@@ -60,6 +61,9 @@ const handleChangeTheme = () => {
               </div>
             </div>
           ))}
+      </div>
+      <div>
+        <WritersQuote></WritersQuote>
       </div>
     </div>
   );
