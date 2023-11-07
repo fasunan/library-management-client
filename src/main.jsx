@@ -14,6 +14,7 @@ import Details from "./PrivateRoute/Details";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ShowAllBooks from "./Components/ShowAllBooks/ShowAllBooks";
 import ErrorPage from "./ErrorPage/ErrorPage";
+import BorrowedBooks from "./PrivateRoute/BorrowedBooks";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,12 @@ const router = createBrowserRouter([
         element: <Details></Details>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/booksId/${params.id}`),
+      },
+      {
+        path: "/borrowedBooks",
+        element: <BorrowedBooks></BorrowedBooks>,
+        loader: () =>
+          fetch(`http://localhost:5000/seeDetails`),
       },
     ],
   },

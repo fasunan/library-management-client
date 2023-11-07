@@ -10,20 +10,36 @@ const Details = () => {
   const { name, image, authorName, category, rating, details, quantity } =
     booksDetails;
   // console.log(name);
+  /*
+  - Image
+- Name
+- Category
+- Borrowed Date
+- Return Date
+  */
 
-  const handleBorrowBook=(e)=> {
+  const handleBorrowBook = (e) => {
     e.preventDefault();
-    const form =e.target;
-    const date = form.date.value;
-    const name =user.displayName;
-    const email= user.email;
-    const borrowInfo={
-      date,
-      name,
+    const form = e.target;
+    const issueDate = new Date().toLocaleDateString();
+    const returnDate = form.date.value;
+    const userName = user?.displayName;
+    const email = user?.email;
+    const borrowInfo = {
+      issueDate,
+      returnDate,
+      userName,
       email,
       booksDetails
     }
     console.log(borrowInfo)
+
+
+// Close the modal after submitting the form
+       const modal = document.getElementById('my_modal_3');
+    modal.close(); 
+
+
     fetch("http://localhost:5000/seeDetails", {
       method: "POST",
       headers: {
@@ -45,6 +61,11 @@ const Details = () => {
       });
 
   }
+
+  const closeDialog = () => {
+    const modal = document.getElementById('my_modal_3');
+    modal.close(); // Close the modal when the cross button is clicked
+  };
 
   return (
     <div>
@@ -77,14 +98,12 @@ const Details = () => {
                     Borrow
                   </span>
                 </button>
-                <dialog id="my_modal_3" className="modal modal-bottom sm:modal-middle">
+                <dialog id="my_modal_3" className="modal">
                   <div className="modal-box">
-                    <h2>Give Information for Borrow</h2>
-                    
                     <form onSubmit={handleBorrowBook} method="dialog">
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                      <button onClick={closeDialog} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 
-                      {/* <p>Name: {user?.displayName}</p> */}
+                      <p>Name: {user?.displayName}</p>
 
                       <p>Email:{user?.email}</p>
                       <div>
