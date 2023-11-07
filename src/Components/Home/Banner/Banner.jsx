@@ -7,10 +7,10 @@ const Banner = () => {
       <div id="slide1" className="carousel-item  relative w-full h-[500px]">
         <img
           src="https://i.ibb.co/DpfNMY8/banner-1.jpg"
-          className="w-full rounded-xl"
+          className="w-full rounded-b-lg"
         />
 
-        <div className="absolute h-full flex items-center left-0 rounded-xl right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
+        <div className="absolute h-full flex items-center left-0 rounded-b-lg right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
           {/* text area */}
           <div className="text-white space-y-5 text-center w-full">
             <h2 className="text-6xl text-white font-bold">
@@ -52,10 +52,10 @@ const Banner = () => {
       <div id="slide2" className="carousel-item relative w-full h-[500px]">
         <img
           src="https://i.ibb.co/qY9pWpP/banner-2.jpg"
-          className="w-full rounded-xl"
+          className="w-full rounded-b-lg"
         />
 
-        <div className="absolute h-full flex items-center left-0 rounded-xl right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
+        <div className="absolute h-full flex items-center left-0 rounded-b-lg right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
           <div className="text-white space-y-5 text-center  w-full  ">
             <h2 className="text-6xl text-white font-bold">
               {" "}
@@ -95,10 +95,10 @@ const Banner = () => {
       <div id="slide3" className="carousel-item relative w-full h-[500px]">
         <img
           src="https://i.ibb.co/6g2zWHN/banner-4.jpg"
-          className="w-full rounded-xl"
+          className="w-full rounded-b-lg"
         />
 
-        <div className="absolute h-full flex items-center left-0 rounded-xl right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
+        <div className="absolute h-full flex items-center left-0 rounded-b-lg right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
           <div className="text-white space-y-5 text-center w-full">
             <h2 className="text-6xl text-white font-bold">
               {" "}
@@ -138,10 +138,10 @@ const Banner = () => {
       <div id="slide4" className="carousel-item relative w-full h-[500px]">
         <img
           src="https://i.ibb.co/5v3Gv9J/banner-3.jpg"
-          className="w-full rounded-xl"
+          className="w-full rounded-b-lg"
         />
 
-        <div className="absolute h-full flex items-center left-0 rounded-xl right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
+        <div className="absolute h-full flex items-center left-0 rounded-b-lg right-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
           <div className="text-white space-y-5 text-center w-full  ">
             <h2 className="text-6xl text-white font-bold">
               {" "}

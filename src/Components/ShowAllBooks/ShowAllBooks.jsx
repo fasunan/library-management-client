@@ -1,12 +1,12 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../Provider/AuthProviders";
+// import { AuthContext } from "../../Provider/AuthProviders";
 
 
 const ShowAllBooks = () => {
     const showAllBooks = useLoaderData();
-    const {user} =useContext(AuthContext);
-    console.log(user)
+    // const {user} =useContext(AuthContext);
+    // console.log(user)
 
     return (
         <div>
@@ -24,9 +24,10 @@ const ShowAllBooks = () => {
                                 <p>{allBook.authorName}</p>
                                 <p>{allBook.category}</p>
                                 <div className="card-actions">
-                                    <Link to={`/update/${allBook._id}`}>
+                                    <Link to={`/updateBooks/${allBook._id}`}>
                                         <button className="btn btn-primary">Update</button>
                                     </Link>
+                                    
                                 </div>
                             </div>
                         </div>
