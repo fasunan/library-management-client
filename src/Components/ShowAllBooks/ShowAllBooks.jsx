@@ -1,19 +1,28 @@
-// import { useContext } from "react";
+
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-// import { AuthContext } from "../../Provider/AuthProviders";
+
 
 
 const ShowAllBooks = () => {
     const showAllBooks = useLoaderData();
-    // const {user} =useContext(AuthContext);
-    // console.log(user)
+    const [availableBook, setAvailableBook]=useState(false);
+
+    const handleFilterBook= ()=>{
+        setAvailableBook(!availableBook);
+    }
+
+    const filteredBooks= availableBook ? showAllBooks.filter((book)=>book.quantity > 0) : showAllBooks;
 
     return (
         <div>
-            <h2>all books :{showAllBooks.length}</h2>
+            <h2>all books :{filteredBooks.length}</h2>
+            <button onClick={handleFilterBook}>
+        {availableBook ? 'Show All Books' : 'Show Available Books'}
+      </button>
            <div className="grid grid-cols-1 lg:grid-cols-4">
            {
-                showAllBooks.map(allBook => <div key={allBook._id}>
+                filteredBooks.map(allBook => <div key={allBook._id}>
                     <div key={allBook._id}>
                         <div className="card">
                             <figure className="px-10 pt-10">

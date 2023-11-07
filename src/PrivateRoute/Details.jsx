@@ -9,20 +9,15 @@ const Details = () => {
   // console.log(booksDetails);
   const { name, image, authorName, category, rating, details, quantity } =
     booksDetails;
-  // console.log(name);
-  /*
-  - Image
-- Name
-- Category
-- Borrowed Date
-- Return Date
-  */
 
   const handleBorrowBook = (e) => {
     e.preventDefault();
     const form = e.target;
     const issueDate = new Date().toLocaleDateString();
     const returnDate = form.date.value;
+    const image = booksDetails.image;
+    const name = booksDetails.name;
+    const category = booksDetails.category;
     const userName = user?.displayName;
     const email = user?.email;
     const borrowInfo = {
@@ -30,14 +25,16 @@ const Details = () => {
       returnDate,
       userName,
       email,
-      booksDetails
+      name,
+      image,
+      category
     }
     console.log(borrowInfo)
 
 
-// Close the modal after submitting the form
-       const modal = document.getElementById('my_modal_3');
-    modal.close(); 
+    // Close the modal after submitting the form
+    const modal = document.getElementById('my_modal_3');
+    modal.close();
 
 
     fetch("http://localhost:5000/seeDetails", {
