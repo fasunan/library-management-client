@@ -16,12 +16,13 @@ import ShowAllBooks from "./Components/ShowAllBooks/ShowAllBooks";
 import ErrorPage from "./ErrorPage/ErrorPage";
 import BorrowedBooks from "./PrivateRoute/BorrowedBooks";
 import UpdateBooks from "./PrivateRoute/UpdateBooks";
+import Read from "./PrivateRoute/Read";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -58,21 +59,33 @@ const router = createBrowserRouter([
       },
       {
         path: "/seeDetails/:id",
-        element: <Details></Details>,
+        element: <PrivateRoute>
+          <Details></Details>
+        </PrivateRoute>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/booksId/${params.id}`),
+      },
+      {
+        path: "/read/:id",
+        element: <Read></Read>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/booksId/${params.id}`),
       },
       {
         path: "/borrowedBooks",
-        element: <BorrowedBooks></BorrowedBooks>,
+        element: <PrivateRoute>
+          <BorrowedBooks></BorrowedBooks>
+        </PrivateRoute>,
         loader: () =>
           fetch(`http://localhost:5000/seeDetails`),
       },
       {
         path: "/updateBooks/:id",
-        element:<UpdateBooks></UpdateBooks>,
+        element: <PrivateRoute>
+          <UpdateBooks></UpdateBooks>
+        </PrivateRoute>,
         loader: ({ params }) =>
-        fetch(`http://localhost:5000/booksId/${params.id}`)
+          fetch(`http://localhost:5000/booksId/${params.id}`)
       },
     ],
   },

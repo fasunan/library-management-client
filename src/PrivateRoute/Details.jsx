@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProviders";
 import Swal from "sweetalert2";
@@ -6,8 +6,10 @@ import Swal from "sweetalert2";
 const Details = () => {
   const { user } = useContext(AuthContext);
   const booksDetails = useLoaderData();
+  // const [canBorrow, setCanBorrow]=useState(true);
+
   // console.log(booksDetails);
-  const { name, image, authorName, category, rating, details, quantity } =
+  const { name, image, authorName, category, rating, details, quantity, _id } =
     booksDetails;
 
   const handleBorrowBook = (e) => {
@@ -69,6 +71,7 @@ const Details = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
+          
           <div>
             <h1 className="text-5xl font-bold">{name}</h1>
             <h3>
@@ -81,10 +84,10 @@ const Details = () => {
               {details}
             </p>
             <div>
-              <Link>
+              <Link to={`/read/${_id}`}>
                 <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    Read Now
+                    Read 
                   </span>
                 </button></Link>
 

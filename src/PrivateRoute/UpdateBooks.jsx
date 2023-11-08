@@ -6,8 +6,8 @@ import { useLoaderData } from "react-router-dom";
 const UpdateBooks = () => {
   const updateBooksData = useLoaderData();
   console.log(updateBooksData);
-  const { name, image, authorName, category, rating, _id } = updateBooksData;
-  console.log(name);
+  const { name, image, authorName, category, rating, _id, photo} = updateBooksData;
+  console.log(photo);
 
 
   const handleUpdateBooks = (e) => {
@@ -16,6 +16,7 @@ const UpdateBooks = () => {
     const form = e.target;
     const name = form.name.value;
     const image = form.image.value;
+  
     const authorName = form.authorName.value;
     const category = form.category.value;
     const rating = form.rating.value;
@@ -90,6 +91,7 @@ const UpdateBooks = () => {
                   className="input input-bordered input-primary w-full max-w-xs"
                 />
               </div>
+              
               <div>
                 <h2 className="text-xl font-bold text-red-400 mb-2">
                   Books Category
