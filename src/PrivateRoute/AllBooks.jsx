@@ -5,7 +5,8 @@ const AllBooks = () => {
 
   return (
     <div>
-      <h2 className="text-center font-bold text-4xl text-blue-600">Heres your Books By Category</h2>
+      <h2 className="text-center mt-10 font-bold text-4xl text-blue-600">Books By Category By Selected Category</h2>
+      <p className="text-center mt-2 font-bold mb-7">Find your desire Books from the thousands of books, Read, Borrow, and explore</p>
       <div className="grid grid-cols-1 lg:grid-cols-4 ">
         {loadedBooks.map((books) => (
           <div key={books._id}>
