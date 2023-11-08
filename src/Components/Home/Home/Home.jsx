@@ -3,6 +3,9 @@ import Banner from "../Banner/Banner";
 import { useEffect, useState } from "react";
 import { CiDark } from 'react-icons/ci';
 import WritersQuote from "../../writersQuote/WritersQuote";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const Home = () => {
   const [theme, setTheme] = useState("light");
@@ -22,6 +25,10 @@ const handleChangeTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
 
 };
+
+useEffect(() => {
+  AOS.init();
+}, []);
 
   return (
     <div className="dark:bg-black">
@@ -46,7 +53,7 @@ const handleChangeTheme = () => {
                 <figure>
                   <img src={category.image} alt="" />
                 </figure>
-                <div className="card-body">
+                <div className="card-body" data-aos="zoom-in" data-aos-duration="1000">
                   <h2 className="card-title justify-center my-10 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#43BFC7] to-[#12E193]">
                     {category.category}
                   </h2>

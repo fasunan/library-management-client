@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -6,6 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { getAuth, updateProfile } from "firebase/auth";
 import { AuthContext } from "../Provider/AuthProviders";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const auth = getAuth();
 
@@ -114,25 +117,25 @@ const SignUp = () => {
         console.error(error);
       });
   };
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <div className="text-black bg-white-400 p-16">
+    <div className="text-black bg-white-400 p-16 "  data-aos-duration="1000" data-aos="flip-right">
       <div className="hero min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left mb-5">
-            <h1 className="text-4xl text-blue-500 ">
-              Its easy to Create an Account !!!
-            </h1>
-            <p className="text-slate-800 font-medium">
-              Already Have an Account? please
-              <Link to={"/login"}>
-                <button className="btn btn-link">Login</button>
-              </Link>
-            </p>
+            
+            <img src="https://i.ibb.co/JHfYqS7/login-3.jpg" alt="" />
+            
           </div>
 
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
+            <h1 className="text-4xl text-blue-500 font-bold text-center ">
+             Sign up!!
+            </h1>
               <form onSubmit={handleCreateAccount}>
                 <div className="form-control">
                   <label className="label">
@@ -194,6 +197,12 @@ const SignUp = () => {
                     Sign Up
                   </button>
                 </div>
+                <p className="text-slate-800 font-medium">
+              Already Have an Account? please
+              <Link to={"/login"}>
+                <button className="btn btn-link">Login</button>
+              </Link>
+            </p>
               </form>
               <ToastContainer></ToastContainer>
               {error && <p>{error}</p>}

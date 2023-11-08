@@ -46,7 +46,7 @@ const userBorrowedBooks = borrowedBook.filter(book => book.email === user?.email
    
     return (
         <div>
-            <h2>Total Borrowed book: {userBorrowedBooks.length}</h2>
+            <h2 className="text-4xl text-sky-400 font-bold mt-10 text-center">You Have Borrowed Total {userBorrowedBooks.length} Book</h2>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 p-14 font-semibold">
                 {
                     userBorrowedBooks.map(borrowed => <div key={borrowed.id}>

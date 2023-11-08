@@ -1,10 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProviders";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -47,22 +51,22 @@ const Login = () => {
         console.log(error);
       });
   };
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <div className="text-black p-16">
+    <div className="text-black p-16" data-aos="flip-left" data-aos-duration="1000">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left mb-5">
-            <h1 className="text-5xl text-blue-400 mb-10">Login please</h1>
-            <p className="text-slate-800 font-medium ">
-              Do not Have an Account? please
-              <Link to={"/signUp"}>
-                <button className="btn btn-link">Create Account</button>
-              </Link>
-            </p>
+           
+            <img src="https://i.ibb.co/jJLNRVh/login-2.jpg" alt="" />
+
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
+            <h1 className="text-4xl text-rose-500 font-bold text-center mb-10">Login!!</h1>
               <form onSubmit={handleLogIn}>
                 <div className="form-control">
                   <label className="label">
@@ -111,6 +115,12 @@ const Login = () => {
                   <FcGoogle className="text-lg"></FcGoogle>Google
                 </button>
               </div>
+              <p className="text-slate-800 font-medium ">
+                Do not Have an Account? please
+                <Link to={"/signUp"}>
+                  <button className="btn btn-link">Create Account</button>
+                </Link>
+              </p>
             </div>
           </div>
         </div>
