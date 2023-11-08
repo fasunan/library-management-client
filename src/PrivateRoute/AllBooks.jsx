@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import Rating from "react-rating";
 
 const AllBooks = () => {
   const loadedBooks = useLoaderData();
@@ -16,6 +17,14 @@ const AllBooks = () => {
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title font-bold">{books.name}</h2>
+                <p>
+              <Rating
+                initialRating={books.rating}
+                emptySymbol={<span className="text-gray-300">☆</span>}
+                fullSymbol={<span className="text-yellow-500">★</span>}
+                readonly={true}
+              />
+            </p>
                 <p>Author: {books.authorName}</p>
                 <p>Category:{books.category}</p>
                 <div className="card-actions">

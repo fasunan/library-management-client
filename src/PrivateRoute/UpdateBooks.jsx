@@ -32,7 +32,7 @@ const UpdateBooks = () => {
 
     // send add books data to server
 
-    fetch(`http://localhost:5000/booksId/${_id}`, {
+    fetch(`https://b8a11-server-side-fasunan.vercel.app/booksId/${_id}`, {
       method: "PUT",
       headers: {
         'content-type': 'application/json'

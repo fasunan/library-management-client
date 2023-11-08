@@ -24,7 +24,7 @@ const userBorrowedBooks = borrowedBook.filter(book => book.email === user?.email
         .then(result=>{
             if(result.isConfirmed){
                 console.log('returned')
-                fetch(`http://localhost:5000/seeDetails/${id}`, {
+                fetch(`https://b8a11-server-side-fasunan.vercel.app/seeDetails/${id}`, {
                         method: 'DELETE'
                     })
                     .then(res => res.json())

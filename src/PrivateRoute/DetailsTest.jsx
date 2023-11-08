@@ -57,7 +57,7 @@ this route for testing quantity
 //     };
 
 //     // Make an API call to update the book's quantity in the database
-//     fetch(`http://localhost:5000/booksId/${_id}`, {
+//     fetch(`https://b8a11-server-side-fasunan.vercel.app/booksId/${_id}`, {
 //       method: "PUT",
 //       headers: {
 //         "content-type": "application/json",
@@ -70,7 +70,7 @@ this route for testing quantity
 //           // Insert the borrowed book into the user's borrowedBooks list
 //           setBorrowedBooks((prevBorrowedBooks) => [...prevBorrowedBooks, booksDetails]);
 //           // Make an API call to add the borrowed book to the user's borrowed books
-//           fetch("http://localhost:5000/seeDetails", {
+//           fetch("https://b8a11-server-side-fasunan.vercel.app/seeDetails", {
 //             method: "POST",
 //             headers: {
 //               "content-type": "application/json",

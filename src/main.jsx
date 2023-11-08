@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/categories"),
+        loader: () => fetch("https://b8a11-server-side-fasunan.vercel.app/categories"),
       },
       {
         path: "/login",
@@ -49,13 +49,13 @@ const router = createBrowserRouter([
         path: "/showAllBooks",
         element: <ShowAllBooks></ShowAllBooks>,
         loader: () =>
-          fetch(`http://localhost:5000/books`),
+          fetch(`https://b8a11-server-side-fasunan.vercel.app/books`),
       },
       {
         path: "/:category",
         element: <AllBooks></AllBooks>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/books/${params.category}`),
+          fetch(`https://b8a11-server-side-fasunan.vercel.app/books/${params.category}`),
       },
       {
         path: "/seeDetails/:id",
@@ -63,13 +63,13 @@ const router = createBrowserRouter([
           <Details></Details>
         </PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/booksId/${params.id}`),
+          fetch(`https://b8a11-server-side-fasunan.vercel.app/booksId/${params.id}`),
       },
       {
         path: "/read/:id",
         element: <Read></Read>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/booksId/${params.id}`),
+          fetch(`https://b8a11-server-side-fasunan.vercel.app/booksId/${params.id}`),
       },
       {
         path: "/borrowedBooks",
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
           <BorrowedBooks></BorrowedBooks>
         </PrivateRoute>,
         loader: () =>
-          fetch(`http://localhost:5000/seeDetails`),
+          fetch(`https://b8a11-server-side-fasunan.vercel.app/seeDetails`),
       },
       {
         path: "/updateBooks/:id",
@@ -85,7 +85,7 @@ const router = createBrowserRouter([
           <UpdateBooks></UpdateBooks>
         </PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/booksId/${params.id}`)
+          fetch(`https://b8a11-server-side-fasunan.vercel.app/booksId/${params.id}`)
       },
     ],
   },

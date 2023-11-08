@@ -26,7 +26,7 @@ const AddBooks = () => {
 
     // send add books data to server
 
-    fetch("http://localhost:5000/books", {
+    fetch("https://b8a11-server-side-fasunan.vercel.app/books", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -72,7 +72,7 @@ const Details = () => {
 //     }
 
 
-    fetch("http://localhost:5000/seeDetails", {
+    fetch("https://b8a11-server-side-fasunan.vercel.app/seeDetails", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -164,11 +164,6 @@ const Details = () => {
             >
               Submit
             </button>
-                      <input
-                        type="submit"
-                        value="Submit"
-                        className="btn mt-6 w-full max-w-xs  bg-indigo-200 text-sky-700"
-                      />
                     </form>
                   </div>
                 </dialog>
@@ -239,7 +234,7 @@ export default Details;
 //     };
 
 //     // Make an API call to update the book's quantity in the database
-//     fetch(`http://localhost:5000/booksId/${_id}`, {
+//     fetch(`https://b8a11-server-side-fasunan.vercel.app/booksId/${_id}`, {
 //       method: "PUT",
 //       headers: {
 //         "content-type": "application/json",
@@ -252,7 +247,7 @@ export default Details;
 //           // Insert the borrowed book into the user's borrowedBooks list
 //           setBorrowedBooks((prevBorrowedBooks) => [...prevBorrowedBooks, booksDetails]);
 //           // Make an API call to add the borrowed book to the user's borrowed books
-//           fetch("http://localhost:5000/seeDetails", {
+//           fetch("https://b8a11-server-side-fasunan.vercel.app/seeDetails", {
 //             method: "POST",
 //             headers: {
 //               "content-type": "application/json",
